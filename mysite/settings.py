@@ -25,7 +25,7 @@ SECRET_KEY = '8k1%w=xyz8ap%rip1j!z*99%kz%d#&^*hi+4w11xsrwa!e^g8j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.xerath18.com','blog.xerath18.com']
+ALLOWED_HOSTS = ['www.xerath18.com', 'blog.xerath18.com']
 
 # Application definition
 
