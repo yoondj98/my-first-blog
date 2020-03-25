@@ -16,6 +16,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+
 def sign_up(request):
     return render(request, 'blog/sign_up.html', {'sign_up': sign_up})
 
