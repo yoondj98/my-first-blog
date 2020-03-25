@@ -9,7 +9,6 @@
     </head>
   <body>
     <div class="page-header">
-        <a href="/"><img src="https://pngimage.net/wp-content/uploads/2018/06/xerath-png-5.png" width ="50" height ="50"><h1>Xerath's Blog</h1></a>
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -18,6 +17,7 @@
         {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
+        <h1><a href="/"><img src="https://pngimage.net/wp-content/uploads/2018/06/xerath-png-7.png" width ="30" height ="30">Xerath's Blog</h1></a>
     </div>
     <div class="content container">
         <div class="row">
