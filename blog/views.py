@@ -67,6 +67,7 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
+
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -92,8 +93,10 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
 
+
 def join(request):
     return render(request, 'blog/join.html')
+
 
 def dojoin(request):
     if request.method == 'POST':
