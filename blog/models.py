@@ -35,3 +35,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class WebUser(models.Model):
+    user_id = models.CharField(max_length=10)
+    user_pw = models.CharField(max_length=10)

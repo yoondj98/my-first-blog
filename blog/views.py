@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from .models import *
 
 
 def post_list(request):
@@ -90,3 +91,14 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def join(request):
+    return render(request, 'blog/join.html')
+
+def dojoin(request):
+    if request.method == 'POST':
+        id = request.POST['id']
+        pw = request.POST['pw']
+        new_user = WebUser(user_id = id, user_pw =pw)
+        new_user.save()
+    return render(request, 'blog/success.html')
