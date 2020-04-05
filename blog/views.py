@@ -121,7 +121,7 @@ def register(request):
                 useremail= useremail,
             )
             #저장
-            fuser.save()
+            form.save()
 
         return render(request, 'register.html', res_data)
 
