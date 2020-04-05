@@ -2,6 +2,41 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+from PIL import Image #뭔지는 아직 모르겠음.
+
+
+class Restaurant(models.Model):
+    cat_food = (
+        ("한식", "한식"),
+        ("중식", "중식"),
+        ("일식", "일식"),
+        ("양식", "양식"),
+    )
+
+    name = models.CharField(max_length=30)
+    location = models.CharField(max_length=100)
+    category = models.CharField(max_length=10, choices= cat_food)
+
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Review(models.Model):
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.PROTECT)
+
+    title = models.CharField(max_length=50)
+    review = models.TextField()
+    photo = models.ImageField(upload_to="blog/images", blank=True)  # 처음 이미지를 업로드하면 media 폴더가 자동으로 생성된다.
+
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -22,6 +57,7 @@ class Post(models.Model):
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)
 
+
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
@@ -36,6 +72,22 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-class WebUser(models.Model):
-    user_id = models.CharField(max_length=10)
-    user_pw = models.CharField(max_length=10)
+class Fuser(models.Model):
+    username = models.CharField(max_length=64, verbose_name='사용자명')
+    # verbose_name이란 admin페이지에서 보일 컬럼명이다.
+
+    useremail = models.EmailField(max_length=128, verbose_name='사용자이메일')
+    # admin 페이지에서 보일 컬럼명
+    password = models.CharField(max_length=64, verbose_name='비밀번호')
+    # verbose_name이란 admin페이지에서 보일 컬럼명이다.
+    register_dttm = models.DateField(auto_now_add = True, verbose_name= '가입날짜')
+    # auto~~~는 자동으로 해당 시간이 추가된다.
+
+    def __str__(self): # 데이터가 문자열로 변환이 될 때 어떻게 나올지 정의해줌(admin에서 나타나는 제목)
+        return self.username
+# 별도로 테이블명을 지정하고 싶을 때 쓰는 코드
+
+    class Meta:
+        db_table = 'user_define_fuser_table'
+        verbose_name = '사용자 모임' #노출될 테이블 이름 변경
+        verbose_name_plural = '사용자 모임'
