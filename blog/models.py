@@ -46,6 +46,8 @@ class Fuser(models.Model):
     # verbose_name이란 admin페이지에서 보일 컬럼명이다.
     register_dttm = models.DateField(auto_now_add = True, verbose_name= '가입날짜')
     # auto~~~는 자동으로 해당 시간이 추가된다.
+    class Meta:
+        db_table = 'user_define_fuser_table'
 
     def __str__(self): # 데이터가 문자열로 변환이 될 때 어떻게 나올지 정의해줌(admin에서 나타나는 제목)
         return self.username
