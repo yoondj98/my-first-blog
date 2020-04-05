@@ -52,6 +52,6 @@ class Fuser(models.Model):
 # 별도로 테이블명을 지정하고 싶을 때 쓰는 코드
 
     class Meta:
-        # db_table = 'user_define_fuser_table'
+         db_table = 'user_define_fuser_table'
          verbose_name = '사용자 모임' #노출될 테이블 이름 변경
          verbose_name_plural = '사용자 모임'
