@@ -123,7 +123,7 @@ def register(request):
             #저장
             fuser.save()
 
-        return render(request, 'blog/register.html', res_data)
+        return render(request, 'register.html', res_data)
 
 def x_login(request):
     if request.method == "GET":
@@ -151,7 +151,7 @@ def x_login(request):
             else:
                 res_data['error'] = "비밀번호가 틀렸습니다."
 
-        return render(request, 'blog/x_login.html', res_data) #응답 데이터 res_data 전달달
+        return render(request, 'x_login.html', res_data) #응답 데이터 res_data 전달달
 
 
 def x_logout(request):
