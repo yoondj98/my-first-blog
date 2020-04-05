@@ -2,42 +2,6 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-from PIL import Image #뭔지는 아직 모르겠음.
-
-
-class Restaurant(models.Model):
-    cat_food = (
-        ("한식", "한식"),
-        ("중식", "중식"),
-        ("일식", "일식"),
-        ("양식", "양식"),
-    )
-
-    name = models.CharField(max_length=30)
-    location = models.CharField(max_length=100)
-    category = models.CharField(max_length=10, choices= cat_food)
-
-    created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-
-class Review(models.Model):
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.PROTECT)
-
-    title = models.CharField(max_length=50)
-    review = models.TextField()
-    photo = models.ImageField(upload_to="blog/images", blank=True)  # 처음 이미지를 업로드하면 media 폴더가 자동으로 생성된다.
-
-    created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
