@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': '사용자 모임',
                 'verbose_name_plural': '사용자 모임',
-                'db_table': 'user_define_fuser_table',
+              #  'db_table': 'user_define_fuser_table',
             },
         ),
         migrations.CreateModel(
