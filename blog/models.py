@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -52,6 +53,6 @@ class Fuser(models.Model):
 # 별도로 테이블명을 지정하고 싶을 때 쓰는 코드
 
     class Meta:
-         db_table = 'user_define_fuser_table'
-         verbose_name = '사용자 모임' #노출될 테이블 이름 변경
-         verbose_name_plural = '사용자 모임'
+        db_table = 'user_define_fuser_table'
+        verbose_name = '사용자 모임' #노출될 테이블 이름 변경
+        verbose_name_plural = '사용자 모임'
