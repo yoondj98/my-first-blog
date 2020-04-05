@@ -116,9 +116,9 @@ def register(request):
         else:
         #위 정보들로 인스턴스 생성
             fuser = Fuser(
-                username = username,
-                password = make_password(password),
-                useremail = useremail,
+                username= username,
+                password= make_password(password),
+                useremail= useremail,
             )
             #저장
             fuser.save()
