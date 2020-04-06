@@ -531,7 +531,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$180000$05pf3lEk4nda$Vo0WR8FD9yWZ5BDxgMdyybT/rCjTzIIQLIB7my9umsw=",
-        "last_login": "2020-04-03T10:13:19.560Z",
+        "last_login": "2020-04-06T08:29:04.852Z",
         "is_superuser": true,
         "username": "Xerath18",
         "first_name": "",
@@ -545,11 +545,28 @@
     }
 },
 {
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$180000$V1ZCTqNuHKy4$AFUTivn1HF23xRvLA+1FQWPkwQUsn1zfzuxLaHhtqyM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "yoondj98",
+        "first_name": "\ub3d9\uc8fc",
+        "last_name": "\uc724",
+        "email": "yoondj98@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-04-05T11:05:53Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "sessions.session",
-    "pk": "oeknsfg7m9isbu83g4emooe09c33mcn1",
+    "pk": "09h0atbz32008m94oxrvh6qaqf0ty8ej",
     "fields": {
         "session_data": "YTMzN2E3MmRkZGUyNmVkMGY3YTkyYTM0Y2NlNGNmOTY0ZDI5MjE4Yzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmYWVkYmQxN2MyYjFkNzQ4MDYzNTEyYWJhMWU1OTEzZjZhN2QwZDhhIn0=",
-        "expire_date": "2020-04-17T10:13:19.570Z"
+        "expire_date": "2020-04-20T08:29:04.862Z"
     }
 },
 {
@@ -707,6 +724,26 @@
     }
 },
 {
+    "model": "blog.fuser",
+    "pk": 3,
+    "fields": {
+        "username": "abcd",
+        "useremail": "abcd@naver.com",
+        "password": "pbkdf2_sha256$180000$lscn23YSv7F7$U+dBCSktiGJnOjjlGvZgshM8JuBRb2RYNyHVFi/yWik=",
+        "register_dttm": "2020-04-05"
+    }
+},
+{
+    "model": "blog.fuser",
+    "pk": 4,
+    "fields": {
+        "username": "dbs",
+        "useremail": "dbs@naver.com",
+        "password": "pbkdf2_sha256$180000$tNZPDlWfZIct$nKkNqoCAMWSTZx9Rh4q2l67h8MTqWoLaTu53INdHHFk=",
+        "register_dttm": "2020-04-06"
+    }
+},
+{
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
@@ -830,6 +867,42 @@
         "object_repr": "test1",
         "action_flag": 2,
         "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2020-04-05T11:05:54.103Z",
+        "user": [
+            "Xerath18"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "yoondj98",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2020-04-05T11:07:13.121Z",
+        "user": [
+            "Xerath18"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "2",
+        "object_repr": "yoondj98",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
     }
 }
 ]
