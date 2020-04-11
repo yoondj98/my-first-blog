@@ -87,7 +87,7 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
-
+"""
 def register(request):
     if request.method == "GET":
         return render(request, 'blog/register.html')
@@ -165,3 +165,4 @@ def home(request):
         return HttpResponse(fuser.username) #해당 유저의 Fuser모델의 username 전달
 
     return HttpResponse("로그인 성공") #세션에 유저 정보 없으면 그냥 home으로
+"""
